@@ -1,0 +1,13 @@
+.test {
+  padding: 5px 20px;
+}
+
+.dark {
+  color: #fff;
+  background-color: #333;
+}
+
+.light {
+  color: #333;
+  background-color: white;
+}
