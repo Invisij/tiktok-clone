@@ -1,5 +1,12 @@
+import styles from './Header.module.scss';
+import clsx from 'clsx';
+
 function Header() {
-    return <h2>Header</h2>;
+    return (
+        <div className={clsx(styles.wapper)}>
+            <div className={clsx(styles.inner)}></div>
+        </div>
+    );
 }
 
 export default Header;
