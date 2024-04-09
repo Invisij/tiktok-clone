@@ -1,0 +1,93 @@
+.wrapper {
+    display: flex;
+    width: 240px;
+    min-height: 100%;
+    padding: 20px 0px 26px 8px;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100%;
+}
+
+.nav {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn span,
+.btn path {
+    min-height: 32px;
+    min-width: 32px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.btn > button {
+    padding: 8px;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.login {
+    padding: 20px 8px 24px;
+    user-select: none;
+}
+
+.login > span {
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 1.6rem;
+    line-height: 21px;
+}
+
+.login {
+    width: 100%;
+}
+
+.login-btn {
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: 25px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.footer {
+    padding: 16px 0 0 8px;
+}
+
+.footer * {
+    color: rgba(22, 24, 35, 0.5);
+}
+
+.footer span {
+    min-height: 0;
+    min-width: 0;
+    margin: 5px 6px 0 0;
+    font-size: 1.2rem;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+.footer-label > button {
+    min-width: 0;
+    padding: 0;
+}
+
+.footer-label * {
+    margin-top: 16px;
+}
+
+.footer-label > .btn {
+    margin: 0;
+}
+
+.footer-label h4 {
+    font-size: 1.5rem;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+.footer .end {
+    display: block;
+    margin-top: 14px;
+}
