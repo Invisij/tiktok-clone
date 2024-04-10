@@ -91,7 +91,16 @@
     background-color: rgba(22, 24, 35, 0.03);
 }
 
-// Disabled
+.menu {
+    padding: 0;
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+
+    span {
+        font-size: 2rem;
+    }
+}
 
 // Button sizes
 .small {

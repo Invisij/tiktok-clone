@@ -66,7 +66,10 @@ function Header() {
                         Upload
                     </Button>
                     <Button primary>Log in</Button>
-                    <Button text className={cx('menu')} leftIcon={<FontAwesomeIcon icon={faEllipsisVertical} />} />
+
+                    <Button text menu>
+                        <FontAwesomeIcon icon={faEllipsisVertical} />{' '}
+                    </Button>
                 </div>
             </div>
         </div>

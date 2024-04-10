@@ -8,6 +8,20 @@
     min-height: 100%;
 }
 
+.wrapper > div + div {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        left: 8px;
+        right: 8px;
+        background: rgba(22, 24, 35, 0.12);
+        transform: scaleY(0.5);
+        top: 0px;
+    }
+}
+
 .nav {
     justify-content: flex-start;
     align-items: center;
@@ -17,7 +31,7 @@
 .btn path {
     min-height: 32px;
     min-width: 32px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     line-height: 24px;
 }
