@@ -11,7 +11,7 @@
 }
 
 .inner {
-    padding: 0 16px;
+    padding: 0 24px 0 16px;
     height: 100%;
     width: var(--default-layout-width);
     display: flex;
@@ -20,6 +20,7 @@
 }
 
 .logo {
+    cursor: pointer;
     display: flex;
 }
 
@@ -111,9 +112,15 @@
 }
 
 .more-btn {
-    min-width: 20px;
-    padding: 4px 0;
+    cursor: pointer;
+    min-width: 32px;
     font-size: 2rem;
     margin-left: 16px;
     background-color: transparent;
+}
+
+.user-avatar {
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
 }

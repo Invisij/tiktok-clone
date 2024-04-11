@@ -93,8 +93,12 @@
     border-color: white;
 }
 
-.text:hover {
-    background-color: rgba(22, 24, 35, 0.03);
+.text {
+    font-size: 2rem;
+    padding: 0;
+    min-width: 32px;
+    min-height: 32px;
+    cursor: pointer;
 }
 
 .menu {

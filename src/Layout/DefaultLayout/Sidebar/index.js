@@ -12,7 +12,7 @@ function Sidebar() {
         <div className={cx('wrapper')}>
             <div className={cx('nav')}>
                 <div className={cx('btn')}>
-                    <Button red text className={cx('')} leftIcon={<FontAwesomeIcon icon={faHouse} />}>
+                    <Button red text leftIcon={<FontAwesomeIcon icon={faHouse} />}>
                         <span>For You</span>
                     </Button>
                 </div>

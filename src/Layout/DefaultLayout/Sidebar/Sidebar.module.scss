@@ -40,6 +40,9 @@
     padding: 8px;
     justify-content: flex-start;
     width: 100%;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
 }
 
 .login {
