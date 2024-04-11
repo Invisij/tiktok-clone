@@ -1,9 +1,15 @@
 import {
+    faCircleQuestion,
     faCircleXmark,
     faEllipsisVertical,
+    faKeyboard,
+    faLanguage,
+    faLightbulb,
     faMagnifyingGlass,
+    faMoon,
     faPlus,
     faSpinner,
+    faToggleOff,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
@@ -11,12 +17,38 @@ import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
 import Button from '~/components/Button';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
+import PopperWrapper from '~/components/Popper';
 import images from '~/assets/images';
 import styles from './Header.module.scss';
 import AccoutItem from '~/components/AccountItem';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        leftIcon: <FontAwesomeIcon icon={faLightbulb} />,
+        title: 'LIVE Creator Hub',
+        to: './live',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faLanguage} />,
+        title: 'English',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+    {
+        leftIcon: <FontAwesomeIcon icon={faMoon} />,
+        title: 'Dark mode',
+    },
+];
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -66,10 +98,11 @@ function Header() {
                         Upload
                     </Button>
                     <Button primary>Log in</Button>
-
-                    <Button text menu>
-                        <FontAwesomeIcon icon={faEllipsisVertical} />{' '}
-                    </Button>
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </div>
