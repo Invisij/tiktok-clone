@@ -373,8 +373,6 @@ export const VerifiedIcon = ({ width = '1.4rem', height = '1.4rem', className })
                 d="M37.12 15.88a3 3 0 0 1 0 4.24l-13.5 13.5a3 3 0 0 1-4.24 0l-8.5-8.5a3 3 0 1 1 4.24-4.24l6.38 6.38 11.38-11.38a3 3 0 0 1 4.24 0Z"
                 fill="currentColor"
             ></path>
-
-            <path fill="currentColor" d="M0 0h48v48H0z"></path>
         </svg>
     );
 };
@@ -396,7 +394,7 @@ export const HomeIcon = ({ width = '3.2rem', height = '3.2rem', className }) => 
         </svg>
     );
 };
-export const FollowingIcon = ({ width = '3.2rem', height = '3.2rem', className }) => {
+export const FollowingIcon = ({ width = '2.4rem', height = '2.4rem', className }) => {
     return (
         <svg
             className={className}

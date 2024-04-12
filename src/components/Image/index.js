@@ -14,14 +14,9 @@ const Image = forwardRef(({ src, alt, className, fallBack: customFallback = imag
     };
 
     return (
-        <img
-            ref={ref}
-            className={cx('wrapper', { [className]: className })}
-            src={fallBack || src}
-            alt={alt}
-            onError={handleError}
-            {...props}
-        />
+        <div className={cx('wrapper', { [className]: className })}>
+            <img ref={ref} className={cx('image')} src={fallBack || src} alt={alt} onError={handleError} {...props} />
+        </div>
     );
 });
 

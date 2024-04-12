@@ -15,6 +15,9 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--text-color);
+    path {
+        pointer-events: none;
+    }
 }
 
 html {
@@ -44,7 +47,7 @@ a[href] {
 @font-face {
     font-family: TikTokFont;
     src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
-    font-weight: 700;
+    font-weight: 600;
 }
 @font-face {
     font-family: TikTokFont;

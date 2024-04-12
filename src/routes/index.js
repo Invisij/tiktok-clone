@@ -1,4 +1,5 @@
 import { HeaderOnly } from '~/Layout';
+
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Friends from '~/pages/Friends';
@@ -11,7 +12,7 @@ const publicRoutes = [
     { path: '/following', component: Following },
     { path: '/friends', component: Friends },
     { path: '/explore', component: Explore },
-    { path: '/profile', component: Profile },
+    { path: '/@:nickname', component: Profile },
     { path: '/upload', component: Upload, layout: HeaderOnly },
 ];
 

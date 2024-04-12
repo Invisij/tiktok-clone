@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import styles from './AccountItem.module.scss';
 import { VerifiedIcon } from '../Icons';
@@ -6,22 +7,18 @@ import Image from '../Image';
 
 const cx = classNames.bind(styles);
 
-function AccoutItem() {
+function AccoutItem({ data }) {
     return (
-        <div className={cx('wrapper')}>
-            <Image
-                className={cx('avatar')}
-                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/67c8523a196569babc59d9a898d8fd85~c5_300x300.webp?lk3s=a5d48078&x-expires=1712761200&x-signature=8%2B2LFnsYziMuYmdBvQc9iThdFSQ%3D"
-                alt="Avatar"
-            />
+        <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+            <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
             <div className={cx('info')}>
                 <h4 className={cx('username')}>
-                    <span>linhbarbie</span>
-                    <VerifiedIcon className={cx('check')} />
+                    <span>{data.nickname}</span>
+                    {data.tick && <VerifiedIcon className={cx('check')} />}
                 </h4>
-                <span className={cx('name')}>✨Linh✨</span>
+                <span className={cx('name')}>{data.full_name}</span>
             </div>
-        </div>
+        </Link>
     );
 }
 

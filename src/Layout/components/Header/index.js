@@ -1,17 +1,13 @@
-import HeadlessTippy from '@tippyjs/react/headless';
-import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import styles from './Header.module.scss';
-import AccoutItem from '~/components/AccountItem';
-import PopperWrapper from '~/components/Popper';
 import Menu from '~/components/Popper/Menu';
 import Button from '~/components/Button';
 import Image from '~/components/Image';
+import Search from '../Search';
 import {
-    CloseIcon,
     FavoriteIcon,
     FeedbackIcon,
     GetCoinIcon,
@@ -20,13 +16,11 @@ import {
     LanguageIcon,
     LiveHubIcon,
     LiveIcon,
-    LoadingIcon,
     LogoIcon,
     LogoutIcon,
     MenuIcon,
     MessageIcon,
     ProfileIcon,
-    SearchIcon,
     SettingIcon,
     ThemeIcon,
     UploadIcon,
@@ -108,14 +102,7 @@ const USER_ITEM = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
     const currentUser = true;
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setSearchResult([]);
-    //     }, 2000);
-    // }, []);
 
     const handleMenuChange = (menuItem) => {
         console.log(menuItem);
@@ -127,34 +114,9 @@ function Header() {
                 <div className={cx('logo')}>
                     <LogoIcon />
                 </div>
-                <HeadlessTippy
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Accouts</h4>
-                                <AccoutItem />
-                                <AccoutItem />
-                                <AccoutItem />
-                                <AccoutItem />
-                                <AccoutItem />
-                                <AccoutItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Search" />
-                        <button className={cx('clear-btn')}>
-                            <CloseIcon />
-                        </button>
-                        <LoadingIcon className={cx('loading')} />
-                        <button className={cx('search-btn')}>
-                            <SearchIcon />
-                        </button>
-                    </div>
-                </HeadlessTippy>
+
+                <Search />
+
                 <div className={cx('actions')}>
                     <Button outline leftIcon={<UploadIcon />}>
                         Upload
