@@ -1,9 +1,8 @@
-import { faCompass, faHouse, faUser, faUserGroup, faUserTag, faVideo } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 
 import Button from '~/components/Button';
 import styles from './Sidebar.module.scss';
+import { ExploreIcon, FollowingIcon, FriendIcon, HomeIcon, LiveIcon, ProfileIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -12,32 +11,32 @@ function Sidebar() {
         <div className={cx('wrapper')}>
             <div className={cx('nav')}>
                 <div className={cx('btn')}>
-                    <Button red text leftIcon={<FontAwesomeIcon icon={faHouse} />}>
+                    <Button red text leftIcon={<HomeIcon />}>
                         <span>For You</span>
                     </Button>
                 </div>
                 <div className={cx('btn')}>
-                    <Button text leftIcon={<FontAwesomeIcon icon={faUserTag} />}>
+                    <Button text leftIcon={<FollowingIcon />}>
                         <span>Following</span>
                     </Button>
                 </div>
                 <div className={cx('btn')}>
-                    <Button text leftIcon={<FontAwesomeIcon icon={faUserGroup} />}>
+                    <Button text leftIcon={<FriendIcon />}>
                         <span>Friends</span>
                     </Button>
                 </div>
                 <div className={cx('btn')}>
-                    <Button text leftIcon={<FontAwesomeIcon icon={faCompass} />}>
+                    <Button text leftIcon={<ExploreIcon />}>
                         <span>Explore</span>
                     </Button>
                 </div>
                 <div className={cx('btn')}>
-                    <Button text leftIcon={<FontAwesomeIcon icon={faVideo} />}>
+                    <Button text leftIcon={<LiveIcon />}>
                         <span>LIVE</span>
                     </Button>
                 </div>
                 <div className={cx('btn')}>
-                    <Button text leftIcon={<FontAwesomeIcon icon={faUser} />}>
+                    <Button text leftIcon={<ProfileIcon />}>
                         <span>Profile</span>
                     </Button>
                 </div>
