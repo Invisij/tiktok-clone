@@ -3,12 +3,17 @@
     width: 240px;
 
     .menu-popper {
+        display: flex;
+        flex-direction: column;
         padding: 8px 0;
 
         .menu-item {
             margin-left: 0;
             padding: 10px 8px 10px 16px;
             justify-content: flex-start;
+        }
+        .list-item {
+            overflow-y: overlay;
         }
     }
 }

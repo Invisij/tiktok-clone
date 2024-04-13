@@ -42,43 +42,54 @@ function Search() {
         inputRef.current.focus();
     };
 
+    const handleChange = (e) => {
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
+        }
+    };
+
     return (
-        <Tippy
-            interactive
-            visible={showClose}
-            onClickOutside={() => {
-                setShowClose(false);
-            }}
-            render={(attrs) => (
-                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper>
-                        <h4 className={cx('search-title')}>Accouts</h4>
-                        {searchResult.map((item) => (
-                            <AccoutItem key={item.id} data={item} />
-                        ))}
-                    </PopperWrapper>
-                </div>
-            )}
-        >
-            <div className={cx('search')}>
-                <input
-                    ref={inputRef}
-                    value={searchValue}
-                    placeholder="Search"
-                    onClick={() => setShowClose(true)}
-                    onChange={(event) => setSearchValue(event.target.value)}
-                />
-                {!!searchValue && !showLoading && (
-                    <button className={cx('clear-btn')} onClick={handleClear}>
-                        <CloseIcon />
-                    </button>
+        // Using a wrapper <div> or <span> tag around the reference element solves
+        // this by creating a new parentNode context.
+        <div>
+            <Tippy
+                interactive
+                visible={showClose && searchValue.length > 0}
+                onClickOutside={() => {
+                    setShowClose(false);
+                }}
+                render={(attrs) => (
+                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <PopperWrapper>
+                            <h4 className={cx('search-title')}>Accouts</h4>
+                            {searchResult.map((item) => (
+                                <AccoutItem key={item.id} data={item} />
+                            ))}
+                        </PopperWrapper>
+                    </div>
                 )}
-                {showLoading && <LoadingIcon className={cx('loading')} />}
-                <button className={cx('search-btn')}>
-                    <SearchIcon />
-                </button>
-            </div>
-        </Tippy>
+            >
+                <div className={cx('search')}>
+                    <input
+                        ref={inputRef}
+                        value={searchValue}
+                        placeholder="Search"
+                        onClick={() => setShowClose(true)}
+                        onChange={handleChange}
+                    />
+                    {!!searchValue && !showLoading && (
+                        <button className={cx('clear-btn')} onClick={handleClear}>
+                            <CloseIcon />
+                        </button>
+                    )}
+                    {showLoading && <LoadingIcon className={cx('loading')} />}
+                    <button className={cx('search-btn')}>
+                        <SearchIcon />
+                    </button>
+                </div>
+            </Tippy>
+        </div>
     );
 }
 

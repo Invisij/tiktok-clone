@@ -1,9 +1,11 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import styles from './Header.module.scss';
 import Menu from '~/components/Popper/Menu';
+import routesConfig from '~/config/routes';
 import Button from '~/components/Button';
 import Image from '~/components/Image';
 import Search from '../Search';
@@ -111,9 +113,9 @@ function Header() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <LogoIcon />
-                </div>
+                </Link>
 
                 <Search />
 
