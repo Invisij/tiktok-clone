@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 import styles from './Search.module.scss';
 import { CloseIcon, LoadingIcon, SearchIcon } from '~/components/Icons';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 import AccoutItem from '~/components/AccountItem';
 import PopperWrapper from '~/components/Popper';
 import { useDebounce } from '~/hooks';
@@ -21,14 +21,14 @@ function Search() {
     const inputRef = useRef();
 
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounce.trim()) {
             setSearchResult([]);
             return;
         }
         const fetApi = async () => {
             setShowLoading(true);
 
-            const result = await searchServices.search(searchValue);
+            const result = await searchServices.search(debounce);
             setSearchResult(result);
 
             setShowLoading(false);
