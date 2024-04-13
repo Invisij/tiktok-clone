@@ -125,12 +125,12 @@ function Header() {
                     </Button>
                     {currentUser ? (
                         <>
-                            <Tippy content="Messages" placement="bottom">
+                            <Tippy delay={[0, 50]} content="Messages" placement="bottom">
                                 <Button text>
                                     <MessageIcon />
                                 </Button>
                             </Tippy>
-                            <Tippy content="Inbox" placement="bottom">
+                            <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                                 <Button text>
                                     <InboxIcon />
                                 </Button>
