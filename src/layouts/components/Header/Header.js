@@ -68,7 +68,7 @@ const MENU_ITEMS = [
     },
 ];
 
-const USER_ITEM = [
+const USER_ITEMS = [
     {
         leftIcon: <ProfileIcon />,
         title: 'View profile',
@@ -135,7 +135,7 @@ function Header() {
                                     <InboxIcon />
                                 </Button>
                             </Tippy>
-                            <Menu items={USER_ITEM} onChange={handleMenuChange}>
+                            <Menu items={USER_ITEMS} onChange={handleMenuChange}>
                                 <Button text>
                                     <Image
                                         src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0450b6fa39c44cd5aac6fda394e23c07~c5_100x100.jpeg?lk3s=a5d48078&x-expires=1713020400&x-signature=WgOE50qkN75UrmqXpmgjHKHksco%3D"

@@ -1,15 +1,60 @@
 import classNames from 'classnames/bind';
 
 import Button from '~/components/Button';
+import Menu, { MenuItem } from './Menu';
+import config from '~/config';
 import styles from './Sidebar.module.scss';
-import { ExploreIcon, FollowingIcon, FriendIcon, HomeIcon, LiveIcon, ProfileIcon } from '~/components/Icons';
+import {
+    ExploreIcon,
+    FollowingIcon,
+    FriendIcon,
+    HomeIcon,
+    LiveIcon,
+    ProfileIcon,
+    UserGroupActiveIcon,
+} from '~/components/Icons';
 
 const cx = classNames.bind(styles);
+
+const NAV_ITEMS = [
+    {
+        leftIcon: <HomeIcon />,
+        title: 'For You',
+    },
+    {
+        leftIcon: <FollowingIcon />,
+        title: 'Following',
+    },
+    {
+        leftIcon: <FriendIcon />,
+        title: 'Friends',
+    },
+    {
+        leftIcon: <ExploreIcon />,
+        title: 'Explore',
+    },
+    {
+        leftIcon: <LiveIcon />,
+        title: 'LIVE',
+    },
+    {
+        leftIcon: <ProfileIcon />,
+        title: 'Profile',
+    },
+];
 
 function Sidebar() {
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('nav')}>
+            <Menu className={cx('nav')}>
+                <MenuItem title="For You" to={config.routes.home} icon={<HomeIcon />} activeIcon={<HomeIcon />} />
+                <MenuItem
+                    title="Following"
+                    to={config.routes.following}
+                    icon={<FollowingIcon />}
+                    activeIcon={<UserGroupActiveIcon />}
+                />
+                <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveIcon />} />
                 <div className={cx('btn')}>
                     <Button red text leftIcon={<HomeIcon />}>
                         <span>For You</span>
@@ -40,7 +85,7 @@ function Sidebar() {
                         <span>Profile</span>
                     </Button>
                 </div>
-            </div>
+            </Menu>
             <div className={cx('login')}>
                 <span>Log in to follow creators, like videos, and view comments.</span>
                 <Button outline red className={cx('login-btn')}>
